@@ -6,7 +6,7 @@ Pylsy
 
 Pylsy is a simple Python library for drawing tables in the terminal/console. Just two lines of code! 
 
-![Screenshot](https://raw.githubusercontent.com/Leviathan1995/Pylsy/master/pzi/span.png)
+![Screenshot](https://raw.githubusercontent.com/hedongzhang/Pylsy/master/pzi/span.png)
  
 Install
 -------
