@@ -81,13 +81,13 @@ class pylsytable(object):
 
     def _print_head(self):
         """Generates the table header."""
-        self._print_divide()
+        self._print_divide(green("-"))
         self.StrTable += " | "
         for colwidth, attr in zip(self.AttributesLength, self.Attributes):
-            self.StrTable += self._pad_string(attr, colwidth)
+            self.StrTable += self._pad_string(attr, colwidth, color=yellow)
             self.StrTable += " | "
         self.StrTable += '\n'
-        self._print_divide("=")
+        self._print_divide(green("="))
 
     def _print_value(self):
         """Generates the table values."""
@@ -98,7 +98,7 @@ class pylsytable(object):
                 self.StrTable += " | "
                 self.StrTable += self._pad_string(val, length)
             self.StrTable += " |"+'\n'
-            self._print_divide()
+            self._print_divide(green("-"))
 
     def _disp_width(self, pwcs, n=None):
         """
@@ -118,7 +118,7 @@ class pylsytable(object):
             width += max(0, wcwidth(char))
         return width
 
-    def _pad_string(self, str, colwidth):
+    def _pad_string(self, str, colwidth, color=white):
         """Center-pads a string to the given column width using spaces."""
         # width = self._disp_width(str)
         # prefix = (colwidth - 1 - width) // 2
@@ -130,7 +130,7 @@ class pylsytable(object):
             prefix = (colwidth - len(str)) / 2
             suffix = prefix + 1
 
-        return ' ' * prefix + str + ' ' * suffix
+        return ' ' * prefix + color(str) + ' ' * suffix
 
     def __str__(self):
         """Returns a pretty-printed string representation of the table."""
