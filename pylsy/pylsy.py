@@ -6,6 +6,7 @@
 # @license MIT
 from __future__ import print_function
 from wcwidth import wcwidth
+from fabric.colors import yellow, green, white
 
 
 class pylsytable(object):
@@ -153,4 +154,3 @@ if __name__ == "__main__":
     table.append_data("name", ["leviathan"])
     table.append_data("name", u"小明")
     print(table.__str__())
-
